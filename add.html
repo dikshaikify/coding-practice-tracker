@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Problem | Coding Practice Tracker</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+padding:0;
+}
+
+header{
+background:#1e293b;
+padding:20px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+width:400px;
+margin:40px auto;
+background:#1e293b;
+padding:30px;
+border-radius:10px;
+}
+
+h2{
+text-align:center;
+}
+
+label{
+display:block;
+margin-top:15px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:none;
+border-radius:5px;
+}
+
+button{
+margin-top:20px;
+width:100%;
+padding:12px;
+background:#22c55e;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#16a34a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Coding Practice Tracker</h1>
+
+<nav>
+
+<a href="index.html">Dashboard</a>
+<a href="add.html">Add Problem</a>
+<a href="history.html">History</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h2>Add Solved Problem</h2>
+
+<form id="problemForm">
+
+<label>Platform</label>
+
+<select id="platform">
+
+<option value="LeetCode">LeetCode</option>
+<option value="CodeChef">CodeChef</option>
+<option value="HackerRank">HackerRank</option>
+
+</select>
+
+<label>Problem Name</label>
+
+<input type="text" id="problemName" placeholder="Enter problem name" required>
+
+<label>Difficulty</label>
+
+<select id="difficulty">
+
+<option value="Easy">Easy</option>
+<option value="Medium">Medium</option>
+<option value="Hard">Hard</option>
+
+</select>
+
+<label>Date</label>
+
+<input type="date" id="date" required>
+
+<button type="submit">Add Problem</button>
+
+</form>
+
+</div>
+
+<script src="js/storage.js"></script>
+
+</body>
+
+</html>
