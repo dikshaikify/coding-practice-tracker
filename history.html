@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Practice History</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+header{
+background:#1e293b;
+padding:20px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+table{
+width:80%;
+margin:40px auto;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #334155;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#1e293b;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Coding Practice Tracker</h1>
+
+<nav>
+
+<a href="index.html">Dashboard</a>
+<a href="add.html">Add Problem</a>
+<a href="history.html">History</a>
+
+</nav>
+
+</header>
+
+<h2 style="text-align:center;">Solved Problems</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Platform</th>
+<th>Problem</th>
+<th>Difficulty</th>
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historyTable">
+
+</tbody>
+
+</table>
+
+<script>
+
+const problems = JSON.parse(localStorage.getItem("problems")) || []
+
+const table = document.getElementById("historyTable")
+
+problems.forEach(problem => {
+
+const row = document.createElement("tr")
+
+row.innerHTML = `
+<td>${problem.platform}</td>
+<td>${problem.name}</td>
+<td>${problem.difficulty}</td>
+<td>${problem.date}</td>
+`
+
+table.appendChild(row)
+
+})
+
+</script>
+
+</body>
+
+</html>
